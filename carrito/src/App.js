@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import Header from './components/Header/Header.jsx';
+import Productos from "./components/Productos/Productos.jsx"
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola Mundo</h1>
+      <Header />
+      <Productos />
     </div>
   );
 }
