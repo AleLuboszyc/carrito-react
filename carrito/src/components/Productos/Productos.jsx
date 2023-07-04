@@ -3,12 +3,6 @@ import { DataContext } from '../context/Dataprovider';
 import ProductoItem from "./ProductoItem.jsx";
 
 const Productos = () => {
-
-  const value = useContext(DataContext)
-  const [productos] = value.productos
-
-  
-
   return (
     <>
       <h1 className='title'>PRODUCTOS</h1>
