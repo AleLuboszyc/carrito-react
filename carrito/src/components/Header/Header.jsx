@@ -1,5 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Nike from "../../images/Nike.jpg";
+import { Link } from 'react-router-dom';
+import { DataContext } from '../context/Dataprovider';
+
 
 const Header = () => {
   const value = useContext(DataContext);
@@ -15,7 +18,7 @@ const Header = () => {
       <div className="menu" onClick={toggleMenu}>
         <box-icon name="menu"></box-icon>
       </div>
-      <a href='#'>
+      <Link href='#'>
         <div className="logo">
           <img src={Nike} alt="logo" width="150" />
         </div>
