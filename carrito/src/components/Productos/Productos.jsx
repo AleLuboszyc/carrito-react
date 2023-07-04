@@ -1,33 +1,32 @@
-import React from 'react'
-import IMG from "../../images/img01.jpg";
+import React, {useContext} from 'react';
+import { DataContext } from '../context/Dataprovider';
+import ProductoItem from "./ProductoItem.jsx";
 
 const Productos = () => {
+
+  const value = useContext(DataContext)
+  const [productos] = value.productos
+
+  
+
   return (
     <>
       <h1 className='title'>PRODUCTOS</h1>
       <div className='productos'>
-        <div className="producto">
-          <a href="#">
-            <div className="producto__img">
-              <img src={IMG} alt='' />
-            </div>
-          </a>
-          <div className="producto__footer">
-            <h1> Title </h1>
-            <p> Categoria </p>
-            <p className='price'>$320</p>
-          </div>
-          <div className="boton">
-            <button className='btn'>
-              Añadir al carrito
-            </button>
-          </div>
-          <div>
-            <a href="#" className='btn'>
-              Vista
-            </a>
-          </div>
-        </div>
+        {
+          productos.map(producto =>(
+            <ProductoItem 
+              Key={producto.id}
+              id={producto.id} 
+              title={producto.title} 
+              price={producto.price} 
+              image={producto.image} 
+              category={producto.category} 
+              cantidad={producto.cantidad}  
+            />
+          ))   
+        }
+        
       </div>
     </>
   )
